@@ -1,0 +1,4 @@
+repository "Dark_Soul_Remake/Dark_Soul_Remake@12370040275911@cloud"
+  path "/"
+    br "/main"
+    co "/main"
