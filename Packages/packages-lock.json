@@ -227,7 +227,7 @@
       "url": "https://packages.unity.com"
     },
     "com.veriorpies.parrelsync": {
-      "version": "file:F:/GameDev/Unity/Assets/ParrelSync-master/ParrelSync",
+      "version": "file:../Assets/ParrelSync",
       "depth": 0,
       "source": "local",
       "dependencies": {}
