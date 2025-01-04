@@ -1,23 +1,27 @@
 using UnityEngine;
 
-namespace CX
+public class PlayerManager : CharacterManager
 {
-    public class PlayerManager : MonoBehaviour
+    PlayerLocomotionManager playerLocomotionManager;
+    protected override void Awake()
     {
-        InputHandler inputHandler;
-        Animator anim;
-        void Start()
-        {
-            inputHandler = GetComponent<InputHandler>();
-            anim = GetComponentInChildren<Animator>();
-        }
+        base.Awake();
 
+        playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
+    }
 
-        void Update()
+    protected override void Update()
+    {
+        base.Update();
+        
+        // if we don't own this game object, we do not control or edit it.
+        if (!IsOwner)
         {
-            inputHandler.isInteracting = anim.GetBool("isInteracting");
-            inputHandler.rollFlag = false;
+            return;
         }
+        // handle all characters movement
+        playerLocomotionManager.HandleAllMovement();
     }
 }
+
 
