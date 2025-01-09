@@ -8,6 +8,7 @@ public class PlayerUIManager : MonoBehaviour
     
     [Header("Network Join")] [SerializeField]
     private bool startGameAsClient;
+    [HideInInspector] public PlayerUIHudManager playerUIHudManager;
 
     private void Awake()
     {
@@ -19,6 +20,8 @@ public class PlayerUIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        playerUIHudManager = GetComponentInChildren<PlayerUIHudManager>();
     }
 
     private void Start()

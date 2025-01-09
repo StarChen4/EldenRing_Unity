@@ -1,16 +1,26 @@
 using System;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterManager : NetworkBehaviour
 {
-    public CharacterController characterController;
+    [HideInInspector] public CharacterController characterController;
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public CharacterNetworkManager characterNetworkManager;
+
+    [Header("Flags")] 
+    public bool isPerformingAction = false;
+    public bool applyRootMotion = false;
+    public bool canRotate = true;
+    public bool canMove = true;
+
     
-    CharacterNetworkManager characterNetworkManager;
     protected virtual void Awake()
     {
         DontDestroyOnLoad(this);
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         characterNetworkManager = GetComponent<CharacterNetworkManager>();
     }
 
@@ -39,4 +49,11 @@ public class CharacterManager : NetworkBehaviour
                 characterNetworkManager.networkRotationSmoothTime);
         }
     }
+
+    protected virtual void LateUpdate()
+    {
+        
+    }
+
+
 }

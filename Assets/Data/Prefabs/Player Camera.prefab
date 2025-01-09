@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 19115441287472346}
+  - {fileID: 6904283505380157294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6143993114836530384
@@ -45,7 +45,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc278c594615dc41be36aa670ab1368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   cameraObject: {fileID: 2460810925305364958}
+  cameraPivotTransform: {fileID: 6904283505380157294}
+  leftAndRightRotationSpeed: 220
+  upAndDownRotationSpeed: 220
+  minimumPivot: -30
+  maximumPivot: 60
+  cameraCollisionRadius: 0.2
+  collideWithLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  leftAndRightLookAngle: 0
+  upAndDownLookAngle: 0
+--- !u!1 &8397878122094961545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6904283505380157294}
+  m_Layer: 0
+  m_Name: Camera Pivot (Up & Down)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6904283505380157294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397878122094961545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 19115441287472346}
+  m_Father: {fileID: 6762313387437007741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8931997762250322790
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,11 +118,11 @@ Transform:
   m_GameObject: {fileID: 8931997762250322790}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6762313387437007741}
+  m_Father: {fileID: 6904283505380157294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2460810925305364958
 Camera:
