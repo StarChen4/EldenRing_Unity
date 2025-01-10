@@ -11,6 +11,8 @@ public class CharacterManager : NetworkBehaviour
 
     [Header("Flags")] 
     public bool isPerformingAction = false;
+    public bool isJumping = false;
+    public bool isGrounded = true;
     public bool applyRootMotion = false;
     public bool canRotate = true;
     public bool canMove = true;
@@ -26,6 +28,7 @@ public class CharacterManager : NetworkBehaviour
 
     protected virtual void Update()
     {
+        animator.SetBool("isGrounded", isGrounded);
         // if this character is being controlled from our side, then assign its network position of our transform
         if (IsOwner)
         {

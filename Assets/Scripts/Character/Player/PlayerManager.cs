@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PlayerManager : CharacterManager
@@ -70,6 +71,8 @@ public class PlayerManager : CharacterManager
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
     {
+        currentCharacterData.sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
         currentCharacterData.characterName = playerNetworkManager.characterName.Value.ToString();
         currentCharacterData.xPosition = transform.position.x;
         currentCharacterData.yPosition = transform.position.y;

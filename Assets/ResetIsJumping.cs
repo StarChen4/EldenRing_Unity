@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
-public class ResetActionFlag : StateMachineBehaviour
+public class ResetIsJumping : StateMachineBehaviour
 {
-    private CharacterManager character;
+    CharacterManager character;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -13,12 +12,7 @@ public class ResetActionFlag : StateMachineBehaviour
         }
         
         // this is called when an action ends, and the state returns to "empty“
-        character.isPerformingAction = false;
-        character.applyRootMotion = false;
-        character.canRotate = true;
-        character.canMove = true;
         character.isJumping = false;
-        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
