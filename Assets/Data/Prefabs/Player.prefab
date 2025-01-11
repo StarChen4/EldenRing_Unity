@@ -331,6 +331,9 @@ PrefabInstance:
       addedObject: {fileID: 5375927454346186135}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
       insertIndex: -1
+      addedObject: {fileID: -583513093991195682}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -4842483845544091451}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
       insertIndex: -1
@@ -537,8 +540,11 @@ MonoBehaviour:
   sprintingSpeed: 5
   rotationSpeed: 15
   sprintingStaminaCost: 10
-  dodgeStaminaCost: 25
   jumpStaminaCost: 25
+  jumpHeight: 4
+  jumpForwardSpeed: 5
+  freeFallSpeed: 2
+  dodgeStaminaCost: 25
 --- !u!114 &3060793199292574704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +569,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5d6c9ecc59c634eb9642e6b6d2a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-583513093991195682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633763530561817969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bf724f03ef5dd4b892b9b5b59252e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectToTest: {fileID: 11400000, guid: 87894d926f325dc44a379c56335922d5, type: 2}
+  processEffect: 0
 --- !u!143 &-4842483845544091451
 CharacterController:
   m_ObjectHideFlags: 0
