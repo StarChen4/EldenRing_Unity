@@ -3524,52 +3524,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1949346375574962561, guid: 791888754977ac645b8c9c1e3dbc2c06, type: 3}
   m_PrefabInstance: {fileID: 178384371}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1756071552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1756071554}
-  - component: {fileID: 1756071553}
-  m_Layer: 0
-  m_Name: World Character Effects Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1756071553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756071552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa514e4684fc724686a3e047a9a7430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantEffects:
-  - {fileID: 11400000, guid: 87894d926f325dc44a379c56335922d5, type: 2}
---- !u!4 &1756071554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756071552}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9416132, y: 0.680332, z: -4.62283}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766030160
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,6 +5385,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8701707e8460c9d45984d7080b409ec0, type: 3}
+--- !u!1001 &5451522597808191761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9416132
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.680332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.62283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660256518029921984, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134380837796097209, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
+      propertyPath: m_Name
+      value: World Character Effects Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d60f670f48b1d348b3d07c8e86174a1, type: 3}
 --- !u!114 &5856534868625519922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +5737,7 @@ SceneRoots:
   - {fileID: 2485530329626365834}
   - {fileID: 8572658035440603642}
   - {fileID: 8355198080040986166}
-  - {fileID: 1756071554}
+  - {fileID: 5451522597808191761}
   - {fileID: 613714377772871806}
   - {fileID: 5102563376237963698}
   - {fileID: 2085940667763434322}

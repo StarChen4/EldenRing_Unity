@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorlCharacterEffectsManager : MonoBehaviour
+public class WorldCharacterEffectsManager : MonoBehaviour
 {
-    public static WorlCharacterEffectsManager instance;
+    public static WorldCharacterEffectsManager instance;
+    
+    [Header("Damage")]
+    public TakeDamageEffect takeDamageEffect;
 
     [SerializeField] private List<InstantCharacterEffect> instantEffects;
     private void Awake()
