@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,6 +13,7 @@ public class CharacterManager : NetworkBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public CharacterNetworkManager characterNetworkManager;
     [HideInInspector] public CharacterEffectsManager characterEffectsManager;
+    [HideInInspector] public CharacterAnimatorManager characterAnimatorManager;
     
     [Header("Flags")] 
     public bool isPerformingAction = false;
@@ -27,8 +29,10 @@ public class CharacterManager : NetworkBehaviour
         DontDestroyOnLoad(this);
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        
         characterNetworkManager = GetComponent<CharacterNetworkManager>();
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
+        characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
     }
 
     protected virtual void Update()
@@ -63,5 +67,36 @@ public class CharacterManager : NetworkBehaviour
         
     }
 
+    public virtual IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
+    {
+        if (IsOwner)
+        {
+            characterNetworkManager.currentHealth.Value = 0;
+            isDead.Value = true;
+
+            // reset any flags here that need to be reset
+
+            // if not grounded, play an aerial death animation
+
+            if (!manuallySelectDeathAnimation)
+            {
+                characterAnimatorManager.PlayTargetActionAnimation("Dead_01", true);
+            }
+
+        }
+
+        // play some death SFX
+
+        yield return new WaitForSeconds(5);
+        
+        // award the players with runes
+        
+        // disable characters
+    }
+
+    public virtual void ReviveCharacter()
+    {
+        
+    }
 
 }
