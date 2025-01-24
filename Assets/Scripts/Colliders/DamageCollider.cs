@@ -22,7 +22,13 @@ public class DamageCollider : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        CharacterManager damageTarget = other.GetComponent<CharacterManager>();  
+        CharacterManager damageTarget = other.GetComponentInParent<CharacterManager>();
+        
+        // if need to search on both the damageable collider & the character controller collider
+        // if (damageTarget == null)
+        // {
+        //     damageTarget = other.GetComponent<CharacterManager>();
+        // }
         
         if (damageTarget != null)
         {

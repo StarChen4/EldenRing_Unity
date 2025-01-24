@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -17,7 +18,6 @@ public class CharacterManager : NetworkBehaviour
     
     [Header("Flags")] 
     public bool isPerformingAction = false;
-    public bool isJumping = false;
     public bool isGrounded = true;
     public bool applyRootMotion = false;
     public bool canRotate = true;
@@ -33,6 +33,11 @@ public class CharacterManager : NetworkBehaviour
         characterNetworkManager = GetComponent<CharacterNetworkManager>();
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
         characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+    }
+
+    protected virtual void Start()
+    {
+        IgnoreMyOwnColliders();
     }
 
     protected virtual void Update()
@@ -99,4 +104,28 @@ public class CharacterManager : NetworkBehaviour
         
     }
 
+    protected virtual void IgnoreMyOwnColliders()
+    {
+        Collider characterControllerCollider = GetComponent<Collider>();
+        Collider[] damageableCharacterColliders = GetComponentsInChildren<Collider>();
+        List<Collider> ignoreColliders = new List<Collider>();
+        
+        // adds all of our damageable character colliders, to the list that will be used to ignore collisions
+        foreach (var collider in damageableCharacterColliders)
+        {
+            ignoreColliders.Add(collider);
+        }
+        
+        // adds the character controller's collider to the list that will be used to ignore collisions
+        ignoreColliders.Add(characterControllerCollider);   
+        
+        // goes through every colliders in the list and ignores collisions with each others
+        foreach (var collider in ignoreColliders)
+        {
+            foreach (var otherCollider in ignoreColliders)
+            {
+                Physics.IgnoreCollision(collider, otherCollider, true);
+            }
+        }
+    }
 }

@@ -10,9 +10,13 @@ public class ResetIsJumping : StateMachineBehaviour
         {
             character = animator.GetComponent<CharacterManager>();
         }
+
+        if (character.IsOwner)
+        {
+            // this is called when an action ends, and the state returns to "empty“
+            character.characterNetworkManager.isJumping.Value = false;
+        }
         
-        // this is called when an action ends, and the state returns to "empty“
-        character.isJumping = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

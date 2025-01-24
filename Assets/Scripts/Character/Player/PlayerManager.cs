@@ -91,6 +91,12 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.currentLeftHandWeaponID.OnValueChanged +=
             playerNetworkManager.OnCurrentLeftHandWeaponIDChanged;
         
+        // upon connecting, if we are the owner of this character, but we are not the server, reload our character data to this newly instantiated character
+        // we dont run this if we are the server, because the host will do the loading
+        if (IsOwner && !IsServer)
+        {
+            LoadGameDataFromCurrentCharacterData(ref WorldSaveGameManager.instance.currentCharacterData); 
+        }
     }
 
     public override IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
