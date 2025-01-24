@@ -16,6 +16,7 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerStatsManager playerStatsManager;
     [HideInInspector] public PlayerInventoryManager playerInventoryManager;
     [HideInInspector] public PlayerEquipmentManager playerEquipmentManager;
+    [HideInInspector] public PlayerCombatManager playerCombatManager;
     
     protected override void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerManager : CharacterManager
         playerStatsManager = GetComponent<PlayerStatsManager>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+        playerCombatManager = GetComponent<PlayerCombatManager>();
     }
 
     protected override void Update()
@@ -90,6 +92,8 @@ public class PlayerManager : CharacterManager
             playerNetworkManager.OnCurrentRightHandWeaponIDChanged;
         playerNetworkManager.currentLeftHandWeaponID.OnValueChanged +=
             playerNetworkManager.OnCurrentLeftHandWeaponIDChanged;
+        playerNetworkManager.currentWeaponBeingUsed.OnValueChanged +=
+            playerNetworkManager.OnCurrentCurrentWeaponBeingUsedIDChanged;
         
         // upon connecting, if we are the owner of this character, but we are not the server, reload our character data to this newly instantiated character
         // we dont run this if we are the server, because the host will do the loading

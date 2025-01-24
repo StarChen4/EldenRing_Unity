@@ -40,8 +40,10 @@ public class WeaponItem : Item
     // heavy attack
     
     // item based actions (RB, RT, LB, LT)
-    
+    [Header("Actions")] 
+    public WeaponItemAction oh_RB_Action; // one-handed right bumper actions
+
     // ash of war
-    
+
     // blocking sounds
 }

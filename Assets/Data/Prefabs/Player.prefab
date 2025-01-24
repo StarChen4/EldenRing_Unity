@@ -368,6 +368,9 @@ PrefabInstance:
       addedObject: {fileID: -3620666191501962179}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3291041789260290457}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -5174908499550294224}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f3cfac2f10c7d468f90078e3cebbaa, type: 3}
       insertIndex: -1
@@ -598,6 +601,8 @@ MonoBehaviour:
     m_InternalValue: 0
   isSprinting:
     m_InternalValue: 0
+  isJumping:
+    m_InternalValue: 0
   currentStamina:
     m_InternalValue: 0
   maxStamina:
@@ -679,9 +684,15 @@ MonoBehaviour:
         byte0059: 0
         byte0060: 0
         byte0061: 0
+  currentWeaponBeingUsed:
+    m_InternalValue: 0
   currentRightHandWeaponID:
     m_InternalValue: 0
   currentLeftHandWeaponID:
+    m_InternalValue: 0
+  isUsingRightHand:
+    m_InternalValue: 0
+  isUsingLeftHand:
     m_InternalValue: 0
 --- !u!114 &-3620666191501962179
 MonoBehaviour:
@@ -704,7 +715,6 @@ MonoBehaviour:
   characterEffectsManager: {fileID: 0}
   characterAnimatorManager: {fileID: 0}
   isPerformingAction: 0
-  isJumping: 0
   isGrounded: 1
   applyRootMotion: 0
   canRotate: 1
@@ -717,6 +727,20 @@ MonoBehaviour:
   playerStatsManager: {fileID: 0}
   playerInventoryManager: {fileID: 0}
   playerEquipmentManager: {fileID: 0}
+  playerCombatManager: {fileID: 0}
+--- !u!114 &3291041789260290457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633763530561817969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4422d717d86d4dc38e72a3f4178cb231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponBeingUsed: {fileID: 0}
 --- !u!114 &-5174908499550294224
 MonoBehaviour:
   m_ObjectHideFlags: 0
